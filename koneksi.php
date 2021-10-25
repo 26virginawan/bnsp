@@ -2,7 +2,7 @@
 $server = 'localhost';
 $user = 'root';
 $password = '';
-$nama_database = 'dbpus';
+$nama_database = 'bnsp';
 
 $db = mysqli_connect($server, $user, $password, $nama_database);
 

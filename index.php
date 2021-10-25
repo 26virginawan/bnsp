@@ -5,49 +5,27 @@ include 'koneksi.php';
 
 $tgl = date('Y-m-d');
 
-if (isset($_SESSION['sesi']) && !empty($_SESSION['sesi'])) { ?>
+// if (isset($_SESSION['sesi']) && !empty($_SESSION['sesi'])) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Sistem Informasi Perpustakaan</title>
+    <title>Sistem Informasi Arsip Surat</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div id="container">
-        <div id="header">
-            <div id="logo-perpustakaan-container">
-                <image id="logo-perpustakaan" src="images/logo-perpustakaan3.png" border=0
-                    style="border:0; text-decoration: none; outline:none">
-            </div>
-            <div id="nama-alamat-perpustakaan-container">
-                <div class="nama-alamat-perpustakaan">
-                    <h1> PERPUSTAKAAN UMUM </h1>
-                </div>
-                <div class="nama-alamat-perpustakaan">
-                    <h4>Jl. Lembah Abang No 11, Telp: (021) 55555555</h4>
-                </div>
-            </div>
-        </div>
-        <div id="header2">
-            <div id="nama-user">Hai <?php echo $_SESSION['sesi']; ?>!</div>
-        </div>
+
         <div id="sidebar">
             <a href="index.php?p=beranda">Beranda</a>
-            <p class="label-navigasi">Data Master</p>
+            <p class="label-navigasi">-----------</p>
             <ul>
-                <li><a href="index.php?p=anggota">Data Anggota</a></li>
-                <li><a href="index.php?p=buku">Data Buku</a></li>
+                <li><a href="index.php?p=beranda">Arsip</a></li>
+                <li><a href="index.php?p=about">About</a></li>
             </ul>
-            <p class="label-navigasi">Data Transaksi</p>
-            <ul>
-                <li><a href="index.php?p=peminjaman">Transaksi Peminjaman</a></li>
-                <li><a href="index.php?p=pengembalian">Transaksi Pengembalian</a></li>
-            </ul>
-            <p class="label-navigasi" style="color: white;"><a href="index.php?p=laporan-transaksi"
-                    style="color: white;">Laporan Transaksi</a></p>
-            <a href="login.php" onclick="return confirm('Apakah Anda Yakin Akan Keluar?')">Logout</a>
+
         </div>
         <div id="content-container">
             <?php
@@ -67,15 +45,7 @@ if (isset($_SESSION['sesi']) && !empty($_SESSION['sesi'])) { ?>
             }
             ?>
         </div>
-        <div>
-            <div id="footer">
-                <h3>Sistem Informasi Perpustakaan (sipus) | Praktikum</h3>
-            </div>
-        </div>
     </div>
 </body>
 
 </html>
-<?php } else {echo "<script>alert('Anda Harus Login Dahulu!');</script>";
-    header('location: login.php');}
-?>
